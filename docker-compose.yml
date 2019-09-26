@@ -1,0 +1,14 @@
+version: "3.5"
+services:
+    order-service:
+        container_name: setel-order-app
+        build: ./order-app
+        ports:
+            - 3000:3000
+        depends_on: 
+            - payment-service
+    payment-service:
+        container_name: setel-payment-app
+        build: ./payment-app
+        ports:
+            - 3001:3001
